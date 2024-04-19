@@ -1,0 +1,22 @@
+{
+  "name": "demo-storybook",
+  "version": "1.0.0",
+  "description": "Demo Storybook Power",
+  "scripts": {
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "storybook": "^8.0.8"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "^1.3.3",
+    "@storybook/addon-essentials": "^8.0.8",
+    "@storybook/addon-links": "^8.0.8",
+    "@storybook/blocks": "^8.0.8",
+    "@storybook/test": "^8.0.8",
+    "@storybook/web-components": "^8.0.8",
+    "@storybook/web-components-vite": "^8.0.8",
+    "lit": "^3.1.3"
+  }
+}

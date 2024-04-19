@@ -4,7 +4,8 @@
   "description": "Demo Storybook Power",
   "scripts": {
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "chromatic": "npx chromatic --project-token=chpt_8089ff2254faa56"
   },
   "dependencies": {
     "storybook": "^8.0.8"

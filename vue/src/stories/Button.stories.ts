@@ -7,7 +7,7 @@ const meta = {
   component: Button,
   tags: ['autodocs'],
   argTypes: {
-    size: { control: 'select', options: ['small', 'medium', 'large'] },
+    size: { control: 'select', options: ['small', 'medium', 'large'], defaultValue: { summary: 'medium' } },
     backgroundColor: { control: 'color' },
   },
   args: {

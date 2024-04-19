@@ -13,9 +13,10 @@ export const Button = ({ primary, backgroundColor = null, size, label, onClick }
       type="button"
       class=${['storybook-button', `storybook-button--${size || 'medium'}`, mode].join(' ')}
       style=${styleMap({ backgroundColor })}
+      data-testid="btn"
       @click=${onClick}
     >
-      ${label}
+      ${label ?? 'Button'}
     </button>
   `;
 };

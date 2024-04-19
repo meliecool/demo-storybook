@@ -1,15 +1,12 @@
 import { expect, fn, userEvent, waitFor, within } from '@storybook/test';
-import { Button } from './Button';
+import { html } from 'lit';
+import { TextField } from './TextField';
 
 export default {
-  title: 'Button',
+  title: 'TextField',
   tags: ['autodocs'],
-  render: (args) => Button(args),
+  render: (args) => html`<div style="max-width: 200px;">${TextField(args)}</div>`,
   argTypes: {
-    backgroundColor: {
-      control: 'color',
-      description: 'Defines the background-color of the element'
-    },
     label: {
       control: 'text',
       defaultValue: { summary: 'Button' },
@@ -22,35 +19,36 @@ export default {
       description: 'Defines the height and width of the element'
     },
   },
-  args: { onClick: fn() },
-};
-
-export const Primary = {
   args: {
-    primary: true,
-  },
-};
-
-export const Secondary = {};
-
-export const Large = {
-  args: {
-    size: 'large',
+    onChange: fn(),
+    onInput: fn(),
+    onBlur: fn(),
   },
 };
 
 export const Small = {
   args: {
-    size: 'small',
-  },
+    size: 'small'
+  }
 };
 
-export const clickButton = {
+export const Default = {};
+
+export const Large = {
+  args: {
+    size: 'large'
+  }
+};
+
+
+export const fillTextField = {
   play: async ({ args, canvasElement }) => {
     const canvas = within(canvasElement);
+    const textField = canvas.getByTestId('text-field');
 
-    await userEvent.click(canvas.getByTestId('btn'));
+    await userEvent.type(textField, 'this is a test');
 
-    await waitFor(() => expect(args.onClick).toHaveBeenCalled());
+    await waitFor(() => expect(args.onInput).toHaveBeenCalled());
+    await waitFor(() => expect(textField.value).toBe('this is a test'));
   },
 };

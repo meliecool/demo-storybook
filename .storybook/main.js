@@ -7,6 +7,8 @@ const config = {
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
+    '@storybook/addon-a11y',
+    '@storybook/addon-interactions',
     "@chromatic-com/storybook",
   ],
   framework: {
@@ -20,17 +22,14 @@ const config = {
     angular: {
       title: 'Angular',
       url: 'http://localhost:6007/',
-      expanded: false,
     },
     react: {
       title: 'React/Nextjs',
       url: 'http://localhost:6008/',
-      expanded: false,
     },
     vue: {
       title: 'Vuejs',
       url: 'http://localhost:6009/',
-      expanded: false,
     },
   },
 };

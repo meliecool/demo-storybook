@@ -1,11 +1,11 @@
+import { Meta, StoryObj } from '@storybook/react';
 import { expect, fn, userEvent, waitFor, within } from '@storybook/test';
-import { html } from 'lit';
-import { TextField } from './TextField';
+import { TextField, TextFieldProps } from './TextField';
 
-export default {
+const meta = {
   title: 'TextField',
+  component: TextField,
   tags: ['autodocs'],
-  render: (args) => html`<div style="max-width: 200px;">${TextField(args)}</div>`,
   argTypes: {
     label: {
       control: 'text',
@@ -24,31 +24,34 @@ export default {
     onInput: fn(),
     onBlur: fn(),
   },
-};
+} satisfies Meta<typeof TextField>;
 
-export const Small = {
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Small: Story = {
   args: {
     size: 'small'
   }
 };
 
-export const Default = {};
+export const Default: Story = {};
 
-export const Large = {
+export const Large: Story = {
   args: {
     size: 'large'
   }
 };
 
 
-export const fillTextField = {
-  play: async ({ args, canvasElement }) => {
+export const FillTextField = {
+  play: async ({ args, canvasElement }: { args: TextFieldProps, canvasElement: HTMLCanvasElement}) => {
     const canvas = within(canvasElement);
     const textField = canvas.getByTestId('text-field');
 
     await userEvent.type(textField, 'this is a test');
 
     await waitFor(() => expect(args.onInput).toHaveBeenCalled());
-    await waitFor(() => expect(textField.value).toBe('this is a test'));
+    await waitFor(() => expect((textField as HTMLInputElement).value).toBe('this is a test'));
   },
 };

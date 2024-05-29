@@ -15,6 +15,9 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "get-user-locale": "^2.3.2",
+    "iso4217": "^0.2.0",
+    "sass": "^1.77.2",
     "vue": "^3.4.21"
   },
   "devDependencies": {

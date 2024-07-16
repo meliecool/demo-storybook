@@ -30,6 +30,6 @@ const config = {
       url: 'http://localhost:6009/',
     },
   },
-  staticDirs: ['../assets'],
+  staticDirs: [{ from: '../assets', to: '/assets' }],
 };
 export default config;

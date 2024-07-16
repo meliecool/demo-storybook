@@ -1,6 +1,6 @@
 import { fn } from '@storybook/test';
 import type { Meta, StoryObj } from '@storybook/vue3';
-import Button from './Button.vue';
+import Button from '../components/Button.vue';
 
 const meta = {
   title: 'Button',

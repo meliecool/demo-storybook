@@ -1,0 +1,13 @@
+.money-amount {
+  &--positive {
+  color: green;
+  }
+
+  &--negative {
+    color: red;
+  }
+
+  &--zero {
+    color: grey;
+  }
+}

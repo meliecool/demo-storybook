@@ -3,23 +3,23 @@
   "version": "1.0.0",
   "description": "Demo Storybook Power",
   "scripts": {
-    "storybook": "storybook dev -p 6006",
+    "storybook": "npx wait-on http://localhost:6007 && npx wait-on http://localhost:6008 && npx wait-on http://localhost:6009 && storybook dev -p 6006",
     "build-storybook": "storybook build",
     "chromatic": "npx chromatic --project-token=chpt_8089ff2254faa56"
   },
   "dependencies": {
-    "storybook": "^8.1.4"
+    "storybook": "^8.2.4"
   },
   "devDependencies": {
-    "@chromatic-com/storybook": "^1.4.0",
-    "@storybook/addon-a11y": "^8.1.4",
-    "@storybook/addon-essentials": "^8.1.4",
-    "@storybook/addon-interactions": "^8.1.4",
-    "@storybook/addon-links": "^8.1.4",
-    "@storybook/blocks": "^8.1.4",
-    "@storybook/test": "^8.1.4",
-    "@storybook/web-components": "^8.1.4",
-    "@storybook/web-components-vite": "^8.1.4",
+    "@chromatic-com/storybook": "^1.6.1",
+    "@storybook/addon-a11y": "^8.2.4",
+    "@storybook/addon-essentials": "^8.2.4",
+    "@storybook/addon-interactions": "^8.2.4",
+    "@storybook/addon-links": "^8.2.4",
+    "@storybook/blocks": "^8.2.4",
+    "@storybook/test": "^8.2.4",
+    "@storybook/web-components": "^8.2.4",
+    "@storybook/web-components-vite": "^8.2.4",
     "chromatic": "^11.3.0",
     "lit": "^3.1.3"
   }
